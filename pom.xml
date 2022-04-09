@@ -11,9 +11,7 @@
 
     
 
-    <groupId>com.codeup.adlister</groupId>
-    <artifactId>adlister</artifactId>
-    <version>1.0-SNAPSHOT</version>
+
     <packaging>war</packaging>
 
     <build>
