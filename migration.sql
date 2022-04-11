@@ -11,7 +11,6 @@ CREATE TABLE users
     username VARCHAR(240) NOT NULL,
     email    VARCHAR(240) NOT NULL,
     password VARCHAR(255) NOT NULL,
-    FOREIGN KEY (deck_list) REFERENCES Deck (id),
     PRIMARY KEY (id)
 );
 
@@ -24,7 +23,7 @@ CREATE TABLE deck
     description  TEXT        NOT NULL,
     card_id      INT UNSIGNED NOT NULL,
     PRIMARY KEY (deck_id),
-    FOREIGN KEY (user_id) REFERENCES Users (id),
+    FOREIGN KEY (user_id) REFERENCES users (id),
 );
 CREATE TABLE card
 (
@@ -40,5 +39,5 @@ CREATE TABLE card
     loyalty        INT          NOT NULL,
     page           INT          NOT NULL,
     PRIMARY KEY (card_id),
-    FOREIGN KEY (card_id) REFERENCES Deck (deck_id)
+    FOREIGN KEY (card_id) REFERENCES deck (deck_id)
 );
