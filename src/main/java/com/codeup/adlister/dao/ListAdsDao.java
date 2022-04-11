@@ -1,55 +1,56 @@
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Ad;
+import com.codeup.adlister.models.Deck;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ListAdsDao implements Ads {
-    private List<Ad> ads;
+    private List<Deck> ads;
 
-    public List<Ad> all() {
+    public List<Deck> all() {
         if (ads == null) {
             ads = generateAds();
         }
         return ads;
     }
 
-    public Long insert(Ad ad) {
+    public Long insert(Deck ad) {
         // make sure we have ads
         if (ads == null) {
             ads = generateAds();
         }
         // we'll assign an "id" here based on the size of the ads list
         // really the dao would handle this
-        ad.setId((long) ads.size());
+        ad.setDeckId((long) ads.size());
         ads.add(ad);
-        return ad.getId();
+        return ad.getDeckId();
     }
 
-    private List<Ad> generateAds() {
-        List<Ad> ads = new ArrayList<>();
-        ads.add(new Ad(
+    private List<Deck> generateAds() {
+        List<Deck> ads = new ArrayList<>();
+        ads.add(new Deck(
             1,
-            1,
+            "the almighty",
             "playstation for sale",
             "This is a slightly used playstation"
         ));
-        ads.add(new Ad(
+        ads.add(new Deck(
             2,
-            1,
+            "name dos",
             "Super Nintendo",
             "Get your game on with this old-school classic!"
         ));
-        ads.add(new Ad(
+        ads.add(new Deck(
             3,
-            2,
+            "juicy",
             "Junior Java Developer Position",
             "Minimum 7 years of experience required. You will be working in the scripting language for Java, JavaScript"
         ));
-        ads.add(new Ad(
+        ads.add(new Deck(
             4,
-            2,
+            "11 quid",
             "JavaScript Developer needed",
             "Must have strong Java skills"
         ));
