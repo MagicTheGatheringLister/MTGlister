@@ -28,7 +28,7 @@ public class MySQLAdsDao implements Ads {
     public List<Deck> all() {
         PreparedStatement stmt = null;
         try {
-            stmt = connection.prepareStatement("SELECT * FROM cards");
+            stmt = connection.prepareStatement("SELECT * FROM deck");
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
         } catch (SQLException e) {

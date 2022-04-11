@@ -26,10 +26,9 @@ public class CreateAdServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         User user = (User) request.getSession().getAttribute("user");
-        Date date = new Date();
         Deck deck = new Deck(
                 user.getId(),
-                request.getParameter("deckName"),
+                request.getParameter("deck_name"),
                 request.getParameter("description"),
                 request.getParameter("date")
         );

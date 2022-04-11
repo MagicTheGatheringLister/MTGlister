@@ -10,8 +10,8 @@
         <h1>Create a new Ad</h1>
         <form action="/ads/create" method="post">
             <div class="form-group">
-                <label for="title">Title</label>
-                <input id="title" name="title" class="form-control" type="text">
+                <label for="deck_name">Title</label>
+                <input id="deck_name" name="deck_name" class="form-control" type="text">
             </div>
             <div class="form-group">
                 <label for="description">Description</label>
