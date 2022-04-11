@@ -1,3 +1,4 @@
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -8,8 +9,14 @@
 </head>
 <body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-    <div class="container">
-        <h1>Welcome to the Magic The Gathering Card lister</h1>
+    <div class="container-fluid">
+        <div id="magic" class="row row-cols-6">
+        </div>
     </div>
+
+<jsp:include page="/WEB-INF/partials/jQuery.jsp"/>
+    <script>
+<jsp:include page="/WEB-INF/fetchCards.js" />
+    </script>
 </body>
 </html>
