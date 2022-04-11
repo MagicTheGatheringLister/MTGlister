@@ -9,7 +9,11 @@
 <body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
     <div class="container">
+<<<<<<< HEAD
         <h1>Welcome to the Magic The Gathering Card lister</h1>
+=======
+        <h1>Welcome to the Adlister!</h1>
+>>>>>>> angels
     </div>
 </body>
 </html>
