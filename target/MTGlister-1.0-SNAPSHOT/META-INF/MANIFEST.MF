@@ -1,5 +1,15 @@
 Manifest-Version: 1.0
 Created-By: IntelliJ IDEA
+<<<<<<< HEAD
+<<<<<<<< HEAD:target/MTGlister-1.0-SNAPSHOT/META-INF/MANIFEST.MF
 Built-By: santana
 Build-Jdk: Amazon Corretto version 11.0.14
+========
+Built-By: noahbruno
+Build-Jdk: Azul Zulu Community™ version 11.0.14
+>>>>>>>> 2b74822d45004c7db76d248d99821151055c27b7:target/adlister-1.0-SNAPSHOT/META-INF/MANIFEST.MF
+=======
+Built-By: mario
+Build-Jdk: Amazon Corretto version 11.0.14
+>>>>>>> 2b74822d45004c7db76d248d99821151055c27b7
 
