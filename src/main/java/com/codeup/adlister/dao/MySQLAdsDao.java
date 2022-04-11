@@ -15,9 +15,9 @@ public class MySQLAdsDao implements Ads {
         try {
             DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(
-                config.getUrl(),
-                config.getUser(),
-                config.getPassword()
+                    config.getUrl(),
+                    config.getUser(),
+                    config.getPassword()
             );
         } catch (SQLException e) {
             throw new RuntimeException("Error connecting to the database!", e);
@@ -56,12 +56,12 @@ public class MySQLAdsDao implements Ads {
 
     private Deck extractAd(ResultSet rs) throws SQLException {
         return new Deck(
-            rs.getLong("deck_id"),
-            rs.getLong("user_id"),
-            rs.getString("deck_name"),
-            rs.getString("date_created"),
-            rs.getString("description")
-        );
+                rs.getLong("deck_id"),
+                rs.getLong("user_id"),
+                rs.getString("deck_name"),
+                rs.getString("description"),
+                rs.getString("date_created")
+                );
     }
 
     private List<Deck> createAdsFromResults(ResultSet rs) throws SQLException {
