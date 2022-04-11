@@ -1,9 +1,1 @@
-Manifest-Version: 1.0
-Created-By: IntelliJ IDEA
-<<<<<<< HEAD
-Built-By: noahbruno
-Build-Jdk: Azul Zulu Community™ version 11.0.14
-=======
-Build-Jdk: Amazon Corretto version 11.0.14
->>>>>>> 2e916f309b62839862a14b3ef19ab8f527042f9c
 
