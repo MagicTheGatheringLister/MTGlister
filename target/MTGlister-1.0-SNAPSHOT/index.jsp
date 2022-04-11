@@ -9,7 +9,11 @@
 <body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
     <div class="container">
+<<<<<<<<< Temporary merge branch 1
         <h1>Welcome to the Magic The Gathering Card lister</h1>
+=========
+        <h1>Welcome to the Adlister!</h1>
+>>>>>>>>> Temporary merge branch 2
     </div>
 </body>
 </html>
