@@ -13,7 +13,7 @@
 <body>
 <form action="/ads/add-cards" method="post">
   <label for="card_name">Card Name</label>
-  <input type="text" name="card_name" placeholder="card name" id="card_name"/>
+  <input type="text" name="hidden" placeholder="card name" id="card_name"/>
 </form>
 
 </body>

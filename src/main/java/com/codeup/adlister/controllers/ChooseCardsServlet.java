@@ -21,7 +21,7 @@ public class ChooseCardsServlet extends HttpServlet {
             response.sendRedirect("/login");
             return;
         }
-        request.getRequestDispatcher("/WEB-INF/cards-test.jsp")
+        request.getRequestDispatcher("/index.jsp")
                 .forward(request, response);
     }
 
