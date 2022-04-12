@@ -6,6 +6,5 @@ import java.util.List;
 
 public interface Cards {
 
-
     Long insert(Card card);
 }
