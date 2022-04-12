@@ -27,9 +27,10 @@ public class ChooseCardsServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         User user = (User) request.getSession().getAttribute("user");
+        String addedCard = request.getParameter("hidden");
         Card card = new Card(
                 user.getId(),
-                request.getParameter("card_name")
+                addedCard
         );
 
 

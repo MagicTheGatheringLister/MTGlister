@@ -9,6 +9,12 @@
 </head>
 <body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
+    <div class="d-flex justify-content-center">
+        <h1>Welcome to the Magic card lister</h1>
+    </div>
+    <div class="d-flex justify-content-center">
+        <h3>Make a profile, select any cards you want and add them to a deck!</h3>
+    </div>
     <div class="container-fluid">
         <div id="magic" class="row row-cols-6">
         </div>
@@ -16,6 +22,9 @@
     <div id="searchedCard">
 
     </div>
+    <form action="/ads/add-cards" method="post">
+        <input type="text" name="hidden" id="hiddenField"/>
+    </form>
 
 <jsp:include page="/WEB-INF/partials/jQuery.jsp"/>
     <script>
