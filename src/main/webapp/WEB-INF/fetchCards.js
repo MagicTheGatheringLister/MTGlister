@@ -26,8 +26,8 @@ const fetchMagicCards = () => {
        `)
                     $("#btn" + i).on("click", e =>{
                         e.preventDefault();
-                        document.getElementById("hiddenField").value=promises[0].cards[i].name;
-
+                        document.getElementById("hiddenName").value=promises[0].cards[i].name;
+                        document.getElementById("hiddenImage").value=promises[0].cards[i].imageUrl;
                     })
                 }
             }})};

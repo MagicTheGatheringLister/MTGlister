@@ -29,6 +29,7 @@ CREATE TABLE card
 (
     card_id        INT UNSIGNED NOT NULL AUTO_INCREMENT,
     card_name      VARCHAR(240) NOT NULL,
+    card_image     varchar (240) NOT NULL,
     PRIMARY KEY (card_id),
     FOREIGN KEY (card_id) REFERENCES deck (deck_id)
 );

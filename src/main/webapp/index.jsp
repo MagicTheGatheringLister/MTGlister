@@ -23,7 +23,10 @@
 
     </div>
     <form action="/ads/add-cards" method="post">
-        <input type="text" name="hidden" id="hiddenField"/>
+        <input type="text" name="hiddenName" id="hiddenName"/>
+    </form>
+    <form action="/ads/add-cards" method="post">
+        <input type="text" name="hiddenImage" id="hiddenImage"/>
     </form>
 
 <jsp:include page="/WEB-INF/partials/jQuery.jsp"/>

@@ -53,7 +53,8 @@ public class MySQLCardsDao implements Cards {
     private Card extractAd(ResultSet rs) throws SQLException {
         return new Card(
                 rs.getLong("card_id"),
-                rs.getString("card_name")
+                rs.getString("card_name"),
+                rs.getString("card_image")
                 );
     }
 
