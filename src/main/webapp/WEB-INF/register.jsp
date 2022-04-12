@@ -17,7 +17,7 @@
         <span class="fontawesome-user"></span><input type="text" name="username" required placeholder="Username" autocomplete="off">
         <span class="fontawesome-envelope-alt"></span><input type="text" id="email" name="email" required placeholder="Email" autocomplete="off">
         <span class="fontawesome-lock"></span><input type="password" name="password" id="password" required placeholder="Password" autocomplete="off">
-        <span class="fontawesome-lock"></span><input type="password" name="confirm_password" id="confirm_password" required placeholder="Password" autocomplete="off">
+        <span class="fontawesome-lock"></span><input type="password" name="confirm_password" id="confirm_password" required placeholder="Confirm Password" autocomplete="off">
 
         <input type="submit" value="Register" title="Register Your Account">
 
