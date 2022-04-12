@@ -30,23 +30,24 @@ public class MySQLCardsDao implements Cards {
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
         } catch (SQLException e) {
-            throw new RuntimeException("Error retrieving all ads.", e);
+            throw new RuntimeException("Error retrieving all Cards.", e);
         }
     }
 
     @Override
     public Long insert(Card card) {
         try {
-            String insertQuery = "INSERT INTO card(card_id, card_name) VALUES (?, ?)";
+            String insertQuery = "INSERT INTO card(card_id, card_name, card_image) VALUES (?, ?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, card.getCardId());
             stmt.setString(2, card.getCardName());
+            stmt.setString(3, card.getCardImage());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
             return rs.getLong(1);
         } catch (SQLException e) {
-            throw new RuntimeException("Error creating a new Deck.", e);
+            throw new RuntimeException("Error creating a new Card.", e);
         }
     }
 

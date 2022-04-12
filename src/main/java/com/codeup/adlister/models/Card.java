@@ -11,8 +11,9 @@ public class Card {
         this.cardImage = cardImage;
     }
 
-    public Card(String cardName) {
+    public Card(String cardName, String cardImage) {
         this.cardName = cardName;
+        this.cardImage = cardImage;
     }
 
     public long getCardId() {
