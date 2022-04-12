@@ -30,6 +30,7 @@ CREATE TABLE card
     card_id        INT UNSIGNED NOT NULL AUTO_INCREMENT,
     card_name      VARCHAR(240) NOT NULL,
     card_image     varchar (240) NOT NULL,
+    card_deck_id   INT UNSIGNED NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (card_id),
-    FOREIGN KEY (card_id) REFERENCES deck (deck_id)
+    FOREIGN KEY (card_deck_id) REFERENCES deck (deck_id)
 );

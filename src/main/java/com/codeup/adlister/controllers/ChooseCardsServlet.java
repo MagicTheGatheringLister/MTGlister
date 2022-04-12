@@ -29,6 +29,7 @@ public class ChooseCardsServlet extends HttpServlet {
         User user = (User) request.getSession().getAttribute("user");
         String addedCard = request.getParameter("hiddenName");
         String addedImage = request.getParameter("hiddenImage");
+        System.out.println(addedCard);
         System.out.println(addedImage);
         Card card = new Card(
                 user.getId(),
