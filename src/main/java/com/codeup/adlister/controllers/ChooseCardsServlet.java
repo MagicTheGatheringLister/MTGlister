@@ -2,6 +2,7 @@ package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.models.Ad;
+import com.codeup.adlister.models.Card;
 import com.codeup.adlister.models.Deck;
 import com.codeup.adlister.models.User;
 
@@ -26,15 +27,14 @@ public class ChooseCardsServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         User user = (User) request.getSession().getAttribute("user");
-        Deck deck = new Deck(
-                user.getId(),
+        Card card = new Card(
+/*                user.getId(),
                 request.getParameter("deck_name"),
-                request.getParameter("description"),
-                request.getParameter("date")
-        );
+                request.getParameter("description")
+        );*/
 
 
-        DaoFactory.getAdsDao().insert(deck);
+        DaoFactory.getCardsDao().insert(Card);
         response.sendRedirect("/ads");
     }
 }

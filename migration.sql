@@ -29,15 +29,6 @@ CREATE TABLE card
 (
     card_id        INT UNSIGNED NOT NULL AUTO_INCREMENT,
     card_name      VARCHAR(240) NOT NULL,
-    cmc            INT UNSIGNED NOT NULL,
-    color_identity VARCHAR(45),
-    card_type      VARCHAR(45),
-    rarity         VARCHAR(45),
-    text           TEXT         NOT NULL,
-    power          INT          NOT NULL,
-    toughness      INT          NOT NULL,
-    loyalty        INT          NOT NULL,
-    page           INT          NOT NULL,
     PRIMARY KEY (card_id),
     FOREIGN KEY (card_id) REFERENCES deck (deck_id)
 );
