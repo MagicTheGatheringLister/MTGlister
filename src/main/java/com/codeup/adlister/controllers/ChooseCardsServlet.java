@@ -28,13 +28,12 @@ public class ChooseCardsServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         User user = (User) request.getSession().getAttribute("user");
         Card card = new Card(
-/*                user.getId(),
-                request.getParameter("deck_name"),
-                request.getParameter("description")
-        );*/
+                user.getId(),
+                request.getParameter("card_name")
+        );
 
 
-        DaoFactory.getCardsDao().insert(Card);
+        DaoFactory.getCardsDao().insert(card);
         response.sendRedirect("/ads");
     }
 }
