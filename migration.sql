@@ -17,14 +17,14 @@ CREATE TABLE users
 CREATE TABLE deck
 (
     deck_id      INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    deck_name    VARCHAR(50) not null,
+    deck_name    VARCHAR(50) NOT NULL,
     user_id      INT UNSIGNED NOT NULL,
     date_created DATETIME    NOT NULL,
     description  TEXT        NOT NULL,
-    card_id      INT UNSIGNED NOT NULL,
     PRIMARY KEY (deck_id),
-    FOREIGN KEY (user_id) REFERENCES users (id),
+    FOREIGN KEY (user_id) REFERENCES users (id)
 );
+
 CREATE TABLE card
 (
     card_id        INT UNSIGNED NOT NULL AUTO_INCREMENT,
