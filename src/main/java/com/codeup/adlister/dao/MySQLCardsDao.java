@@ -1,5 +1,6 @@
 package com.codeup.adlister.dao;
 
+import com.codeup.adlister.models.Card;
 import com.codeup.adlister.models.Deck;
 import com.mysql.cj.jdbc.Driver;
 
@@ -7,7 +8,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MySQLCardsDao implements Ads {
+public class MySQLCardsDao implements Cards {
     private Connection connection = null;
 
     public MySQLCardsDao(Config config) {
@@ -23,11 +24,10 @@ public class MySQLCardsDao implements Ads {
         }
     }
 
-    @Override
-    public List<Deck> all() {
+    public List<Card> all() {
         PreparedStatement stmt = null;
         try {
-            stmt = connection.prepareStatement("SELECT * FROM deck");
+            stmt = connection.prepareStatement("SELECT * FROM card");
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
         } catch (SQLException e) {
@@ -36,14 +36,12 @@ public class MySQLCardsDao implements Ads {
     }
 
     @Override
-    public Long insert(Deck deck) {
+    public Long insert(Card card) {
         try {
-            String insertQuery = "INSERT INTO deck(deck_name, user_id, date_created, description) VALUES (?, ?, ?, ?)";
+            String insertQuery = "INSERT INTO card(card_id, card_name) VALUES (?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
-            stmt.setString(1, deck.getDeckName());
-            stmt.setLong(2, deck.getUserId());
-            stmt.setString(3, deck.getDateCreated());
-            stmt.setString(4, deck.getDescription());
+            stmt.setLong(1, card.getCardId());
+            stmt.setString(2, card.getCardName());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
@@ -53,21 +51,18 @@ public class MySQLCardsDao implements Ads {
         }
     }
 
-    private Deck extractAd(ResultSet rs) throws SQLException {
-        return new Deck(
-                rs.getLong("deck_id"),
-                rs.getLong("user_id"),
-                rs.getString("deck_name"),
-                rs.getString("description"),
-                rs.getString("date_created")
+    private Card extractAd(ResultSet rs) throws SQLException {
+        return new Card(
+                rs.getLong("card_id"),
+                rs.getString("card_name")
                 );
     }
 
-    private List<Deck> createAdsFromResults(ResultSet rs) throws SQLException {
-        List<Deck> Deck = new ArrayList<>();
+    private List<Card> createAdsFromResults(ResultSet rs) throws SQLException {
+        List<Card> Card = new ArrayList<>();
         while (rs.next()) {
-            Deck.add(extractAd(rs));
+            Card.add(extractAd(rs));
         }
-        return Deck;
+        return Card;
     }
 }
