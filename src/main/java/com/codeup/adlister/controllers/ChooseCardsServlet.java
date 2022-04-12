@@ -33,6 +33,7 @@ public class ChooseCardsServlet extends HttpServlet {
                 request.getParameter("date")
         );
 
+
         DaoFactory.getAdsDao().insert(deck);
         response.sendRedirect("/ads");
     }
