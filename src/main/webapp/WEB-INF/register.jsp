@@ -7,6 +7,7 @@
     <style>
         <jsp:include page="registration.css"/>
     </style>
+
 </head>
 <body>
 <jsp:include page="partials/navbar.jsp" />
@@ -20,7 +21,8 @@
         <span class="fontawesome-lock"></span><input type="password" name="confirm_password" id="confirm_password" required placeholder="Confirm Password" autocomplete="off">
 
         <input type="submit" value="Register" title="Register Your Account">
-
+    </form>
+</div>
 </body>
 </html>
 
