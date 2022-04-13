@@ -1,5 +1,6 @@
 package com.codeup.adlister.dao;
 
+import com.codeup.adlister.models.Card;
 import com.codeup.adlister.models.Deck;
 import com.mysql.cj.jdbc.Driver;
 
@@ -56,10 +57,10 @@ public class MySQLAdsDao implements Ads {
     private Deck extractAd(ResultSet rs) throws SQLException {
         return new Deck(
                 rs.getLong("deck_id"),
-                rs.getLong("user_id"),
                 rs.getString("deck_name"),
-                rs.getString("description"),
-                rs.getString("date_created")
+                rs.getLong("user_id"),
+                rs.getString("date_created"),
+                rs.getString("description")
                 );
     }
 
@@ -69,5 +70,16 @@ public class MySQLAdsDao implements Ads {
             Deck.add(extractAd(rs));
         }
         return Deck;
+    }
+
+    public Deck findDeck(String deckName) {
+        String query = "SELECT * FROM deck WHERE deck_name = ? LIMIT 1";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, deckName);
+            return extractAd(stmt.executeQuery());
+        } catch (SQLException e) {
+            throw new RuntimeException("Error finding a deck from decks", e);
+        }
     }
 }

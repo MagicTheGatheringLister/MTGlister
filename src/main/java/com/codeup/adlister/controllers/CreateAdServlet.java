@@ -27,13 +27,14 @@ public class CreateAdServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         User user = (User) request.getSession().getAttribute("user");
         Deck deck = new Deck(
-                user.getId(),
                 request.getParameter("deck_name"),
-                request.getParameter("description"),
-                request.getParameter("date")
+                user.getId(),
+                request.getParameter("date"),
+                request.getParameter("description")
         );
-
+        String name = request.getParameter("deck_name");
         DaoFactory.getAdsDao().insert(deck);
+        request.setAttribute("name", "name");
         response.sendRedirect("/ads");
     }
 }

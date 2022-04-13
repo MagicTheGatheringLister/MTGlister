@@ -9,7 +9,7 @@ public class Deck {
     private String description;
     private String dateCreated;
 
-    public Deck(long deckId, long userId, String deckName, String description, String dateCreated) {
+    public Deck(long deckId, String deckName, long userId, String dateCreated, String description) {
         this.deckId = deckId;
         this.userId = userId;
         this.deckName = deckName;
@@ -17,7 +17,7 @@ public class Deck {
         this.dateCreated = dateCreated;
     }
 
-    public Deck(long userId, String deckName, String description, String dateCreated) {
+    public Deck(String deckName, long userId, String dateCreated, String description) {
         this.userId = userId;
         this.deckName = deckName;
         this.description = description;

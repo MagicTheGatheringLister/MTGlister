@@ -36,7 +36,6 @@ public class RegisterServlet extends HttpServlet {
 
         // create and save a new user
         User user = new User(username, email, password);
-        System.out.println(user.getUsername() + ", " + user.getPassword() + ", " + user.getEmail());
         DaoFactory.getUsersDao().insert(user);
         request.getSession().setAttribute("user", DaoFactory.getUsersDao().findByUsername(username));
         response.sendRedirect("/login");
