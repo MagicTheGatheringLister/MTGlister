@@ -7,7 +7,6 @@
     <style>
         <jsp:include page="registration.css"/>
     </style>
-
 </head>
 <body>
 <jsp:include page="partials/navbar.jsp" />
