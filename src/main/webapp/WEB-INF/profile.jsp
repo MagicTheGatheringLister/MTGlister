@@ -225,6 +225,9 @@
                                 <!-- end timeline -->
                             </div>
                             <!-- end #profile-post tab -->
+                            <div id="profile-about">
+                                decks will go here
+                            </div>
                         </div>
                         <!-- end tab-content -->
                     </div>

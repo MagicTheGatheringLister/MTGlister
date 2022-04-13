@@ -5,15 +5,27 @@ public class Card {
     private String cardName;
     private String cardImage;
 
-    public Card(long cardId, String cardName, String cardImage){
+    public long getCardDeckId() {
+        return cardDeckId;
+    }
+
+    public void setCardDeckId(long cardDeckId) {
+        this.cardDeckId = cardDeckId;
+    }
+
+    private long cardDeckId;
+
+    public Card(long cardId, String cardName, String cardImage, long cardDeckId){
         this.cardId = cardId;
         this.cardName = cardName;
         this.cardImage = cardImage;
+        this.cardDeckId = cardDeckId;
     }
 
-    public Card(String cardName, String cardImage) {
+    public Card(String cardName, String cardImage, long cardDeckId) {
         this.cardName = cardName;
         this.cardImage = cardImage;
+        this.cardDeckId = cardDeckId;
     }
 
     public long getCardId() {

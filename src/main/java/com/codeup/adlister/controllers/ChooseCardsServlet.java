@@ -32,9 +32,9 @@ public class ChooseCardsServlet extends HttpServlet {
         System.out.println(addedCard);
         System.out.println(addedImage);
         Card card = new Card(
-                user.getId(),
                 addedCard,
-                addedImage
+                addedImage,
+                2
         );
 
 

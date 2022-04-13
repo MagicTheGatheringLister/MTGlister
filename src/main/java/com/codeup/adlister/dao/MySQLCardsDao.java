@@ -26,7 +26,7 @@ public class MySQLCardsDao implements Cards {
     public List<Card> all() {
         PreparedStatement stmt = null;
         try {
-            stmt = connection.prepareStatement("SELECT * FROM card");
+            stmt = connection.prepareStatement("SELECT * FROM cards");
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
         } catch (SQLException e) {
@@ -37,11 +37,12 @@ public class MySQLCardsDao implements Cards {
     @Override
     public Long insert(Card card) {
         try {
-            String insertQuery = "INSERT INTO card(card_id, card_name, card_image) VALUES (?, ?, ?)";
+            String insertQuery = "INSERT INTO cards(card_id, card_name, card_image, card_deck_id) VALUES (?, ?, ?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, card.getCardId());
             stmt.setString(2, card.getCardName());
             stmt.setString(3, card.getCardImage());
+            stmt.setLong(4, card.getCardDeckId());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
@@ -55,7 +56,8 @@ public class MySQLCardsDao implements Cards {
         return new Card(
                 rs.getLong("card_id"),
                 rs.getString("card_name"),
-                rs.getString("card_image")
+                rs.getString("card_image"),
+                rs.getLong("card_deck_id")
                 );
     }
 
