@@ -4,16 +4,19 @@
 @import url(https://meyerweb.com/eric/tools/css/reset/reset.css);
 
 body {
-    background: #1b1e24;
-    background-image:-webkit-linear-gradient(right,#1b1e24,#1b1e24 50%,#1b1e24);
-    background-image:-moz-linear-gradient(right,#1b1e24,#1b1e24 50%,#1b1e24);
-    background-image:-o-linear-gradient(right,#1b1e24,#1b1e24 50%,#1b1e24);
-    background-image:-ms-linear-gradient(right,#1b1e24,#1b1e24 50%,#1b1e24);
-    background-image:linear-gradient(to left,#1b1e24,#1b1e24 50%,#1b1e24);
+    /*background: #1b1e24;*/
+    /*background-image:-webkit-linear-gradient(right,#1b1e24,#1b1e24 50%,#1b1e24);*/
+    /*background-image:-moz-linear-gradient(right,#1b1e24,#1b1e24 50%,#1b1e24);*/
+    /*background-image:-o-linear-gradient(right,#1b1e24,#1b1e24 50%,#1b1e24);*/
+    /*background-image:-ms-linear-gradient(right,#1b1e24,#1b1e24 50%,#1b1e24);*/
+    /*background-image:linear-gradient(to left,#1b1e24,#1b1e24 50%,#1b1e24);*/
     text-align: center;
     font-family: Arial, sans-serif;
     font-size: 14px;
     line-height: 1.5em;
+    /*background-image: url('../../../assets/1207191-free-download-magical-wallpapers-for-desktop-1920x1080-photo.jpg');*/
+    background: url("../assets/1207191-free-download-magical-wallpapers-for-desktop-1920x1080-photo.jpg");
+    background-size: cover;
 }
 
 [class*="fontawesome-"]:before {
@@ -31,8 +34,30 @@ input {
 .Login {
     margin: 50px auto;
     width: 242px;
-}
 
+
+}
+.mainC {
+    margin-top: 280px;
+    border-style: solid;
+
+
+    /*border-color: yellow;*/
+}
+.cont{
+margin: 0 600px;
+    background-color: rgba(6, 33, 33, 0.8);
+    border-radius: 25px;
+    border-style: solid;
+    border-color: #a7a5a5;
+    border-width: 1px;
+    box-shadow: rgba(255,1,0, 0.4) 0px 54px 55px,
+    rgba(255,1,0, 0.4) 0px -12px 30px,
+    rgba(255,1,0, 0.4) 0px 4px 6px,
+    rgba(255,1,0, 0.4) 0px 12px 13px,
+    rgba(255,1,0, 0.4) 0px -3px 5px;
+
+}
 .Login span {
     color: hsl(14, 100%, 44%);
     display: block;
@@ -54,13 +79,13 @@ input {
     border-top: 2px solid #e23600;
     border-right: 1px solid #000;
     border-left: 1px solid #000;
-    border-radius: 5px 5px 0 0;
     -moz-border-radius: 5px 5px 0 0;
     -webkit-border-radius: 5px 5px 0 0;
-    -o-border-radius: 5px 5px 0 0;
-    -ms-border-radius: 5px 5px 0 0;
+
+    border-radius: 10px;
     color: #363636;
     padding-left: 36px;
+    margin: 20px 0;
     width: 204px;
 }
 
@@ -70,11 +95,9 @@ input {
     border-right: 1px solid #000;
     border-bottom: 2px solid #e23600;
     border-left: 1px solid #000;
-    border-radius: 0 0 5px 5px;
     -moz-border-radius: 0 0 5px 5px;
     -webkit-border-radius: 0 0 5px 5px;
-    -o-border-radius: 0 0 5px 5px;
-    -ms-border-radius: 0 0 5px 5px;
+    border-radius: 10px;
     color: #363636;
     margin-bottom: 20px;
     padding-left: 36px;
@@ -84,17 +107,15 @@ input {
 .Login input[type="submit"] {
     background-color: #e23600;
     border: 1px solid #e23600;
-    border-radius: 15px;
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px;
+    border-radius: 10px;
     color: #fff;
     font-weight: bold;
     line-height: 48px;
     text-align: center;
     text-transform: uppercase;
-    width: 240px;
+    width: 220px;
 }
 
 .Login input[type="submit"]:hover {

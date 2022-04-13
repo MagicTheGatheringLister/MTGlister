@@ -22,11 +22,16 @@
     <div id="searchedCard">
 
     </div>
-    <form action="/ads/add-cards" method="post">
+    <form action="/ads/add-cards" id="myForm" method="post">
         <input type="text" name="hiddenName" id="hiddenName"/>
-    </form>
-    <form action="/ads/add-cards" method="post">
         <input type="text" name="hiddenImage" id="hiddenImage"/>
+        <%
+            if (request.getSession().getAttribute("user") == null) { %>
+        <button type="submit" disabled="disabled">Submit</button>
+       <% } else { %>
+        <button type="submit" id="submit">Submit</button>
+       <% } %>
+<%--        <button type="submit">submit</button>--%>
     </form>
 
 <jsp:include page="/WEB-INF/partials/jQuery.jsp"/>

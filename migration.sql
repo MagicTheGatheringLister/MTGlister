@@ -3,7 +3,7 @@ MTGLister_db;
 
 DROP TABLE IF EXISTS deck;
 DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS card;
+DROP TABLE IF EXISTS cards;
 
 CREATE TABLE users
 (
@@ -25,11 +25,12 @@ CREATE TABLE deck
     FOREIGN KEY (user_id) REFERENCES users (id)
 );
 
-CREATE TABLE card
+CREATE TABLE cards
 (
     card_id        INT UNSIGNED NOT NULL AUTO_INCREMENT,
     card_name      VARCHAR(240) NOT NULL,
     card_image     varchar (240) NOT NULL,
+    card_deck_id   INT UNSIGNED NOT NULL,
     PRIMARY KEY (card_id),
-    FOREIGN KEY (card_id) REFERENCES deck (deck_id)
+    FOREIGN KEY (card_deck_id) REFERENCES deck (deck_id)
 );

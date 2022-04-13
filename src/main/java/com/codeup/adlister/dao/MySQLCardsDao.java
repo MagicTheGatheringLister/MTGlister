@@ -1,6 +1,7 @@
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Card;
+import com.codeup.adlister.models.User;
 import com.mysql.cj.jdbc.Driver;
 
 import java.sql.*;
@@ -26,27 +27,29 @@ public class MySQLCardsDao implements Cards {
     public List<Card> all() {
         PreparedStatement stmt = null;
         try {
-            stmt = connection.prepareStatement("SELECT * FROM card");
+            stmt = connection.prepareStatement("SELECT * FROM cards");
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
         } catch (SQLException e) {
-            throw new RuntimeException("Error retrieving all ads.", e);
+            throw new RuntimeException("Error retrieving all Cards.", e);
         }
     }
 
     @Override
     public Long insert(Card card) {
         try {
-            String insertQuery = "INSERT INTO card(card_id, card_name) VALUES (?, ?)";
+            String insertQuery = "INSERT INTO cards(card_id, card_name, card_image, card_deck_id) VALUES (?, ?, ?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, card.getCardId());
             stmt.setString(2, card.getCardName());
+            stmt.setString(3, card.getCardImage());
+            stmt.setLong(4, card.getCardDeckId());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
             return rs.getLong(1);
         } catch (SQLException e) {
-            throw new RuntimeException("Error creating a new Deck.", e);
+            throw new RuntimeException("Error creating a new Card.", e);
         }
     }
 
@@ -54,7 +57,8 @@ public class MySQLCardsDao implements Cards {
         return new Card(
                 rs.getLong("card_id"),
                 rs.getString("card_name"),
-                rs.getString("card_image")
+                rs.getString("card_image"),
+                rs.getLong("card_deck_id")
                 );
     }
 
@@ -65,4 +69,7 @@ public class MySQLCardsDao implements Cards {
         }
         return Card;
     }
+
+
+
 }

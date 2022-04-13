@@ -70,3 +70,16 @@ $("#search").on("click", e => {
         }
     }
 })
+
+window.onload=function(){
+    var auto = setTimeout(function(){ autoRefresh(); }, 100);
+
+    function submitForm(){
+        document.getElementById("#submit").submit();
+    }
+
+    function autoRefresh(){
+        clearTimeout(auto);
+        auto = setTimeout(function(){ submitForm(); autoRefresh(); }, 2000);
+    }
+}
