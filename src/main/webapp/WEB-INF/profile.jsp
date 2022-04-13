@@ -27,12 +27,12 @@
                             <div class="profile-header-content">
                                 <!-- BEGIN profile-header-img -->
                                 <div class="profile-header-img">
-                                    <!--                                <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">-->
+<%--                                    Empty--%>
                                 </div>
                                 <!-- END profile-header-img -->
                                 <!-- BEGIN profile-header-info -->
                                 <div class="profile-header-info">
-                                    <h4 class="m-t-10 m-b-5">Elden Lord</h4>
+                                    <h3 class="m-t-10 m-b-5">Welcome, ${sessionScope.user.username}!</h3>
                                     <a href="#" class="btn btn-sm btn-info mb-2">Edit Profile</a>
                                 </div>
                                 <!-- END profile-header-info -->
@@ -72,7 +72,6 @@
                                             <div class="timeline-header">
                                                 <span class="userimage"><img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt=""></span>
                                                 <span class="username"><a href="javascript:;">Sean Ngu</a> <small></small></span>
-                                                <span class="pull-right text-muted">18 Views</span>
                                             </div>
                                             <div class="timeline-content">
                                                 <p>
@@ -134,7 +133,6 @@
                                             <div class="timeline-header">
                                                 <span class="userimage"><img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt=""></span>
                                                 <span class="username">Sean Ngu</span>
-                                                <span class="pull-right text-muted">82 Views</span>
                                             </div>
                                             <div class="timeline-content">
                                                 <p>INSERT DECK HERE</p>
@@ -164,7 +162,6 @@
                                             <div class="timeline-header">
                                                 <span class="userimage"><img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt=""></span>
                                                 <span class="username">Sean Ngu</span>
-                                                <span class="pull-right text-muted">1,282 Views</span>
                                             </div>
                                             <div class="timeline-content">
                                                 <p class="lead">
@@ -196,7 +193,6 @@
                                             <div class="timeline-header">
                                                 <span class="userimage"><img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt=""></span>
                                                 <span class="username">Sean Ngu</span>
-                                                <span class="pull-right text-muted">1,021,282 Views</span>
                                             </div>
                                             <div class="timeline-content">
                                                 DECK
