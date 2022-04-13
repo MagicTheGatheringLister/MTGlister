@@ -9,6 +9,19 @@
     <style>
         <jsp:include page="profile.css"/>
     </style>
+    <style>
+        .zoom {
+            padding: 50px;
+            transition: transform .2s; /* Animation */
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+        }
+
+        .zoom:hover {
+            transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+        }
+    </style>
 
 </head>
 <body>
@@ -41,8 +54,9 @@
                         <!-- END profile-header-content -->
                         <!-- BEGIN profile-header-tab -->
                         <ul class="profile-header-tab nav nav-tabs">
-                            <li class="nav-item"><a href="#profile-post" class="nav-link active show" data-toggle="tab">My
-                                Collection</a></li>
+                            <li class="nav-item">
+                                <a href="#profile-post" class="nav-link active show" data-toggle="tab">My Collection</a>
+                            </li>
                         </ul>
                     </div>
 
@@ -53,20 +67,20 @@
                     <div id="searchedCard">
 
                     </div>
-                    <form action="/ads/add-cards" method="post">
-                        <input type="text" name="hiddenName" id="hiddenName"/>
-                    </form>
-                    <form action="/ads/add-cards" method="post">
-                        <input type="text" name="hiddenImage" id="hiddenImage"/>
-                    </form>
+<%--                    <form action="/ads/add-cards" method="post">--%>
+<%--                        <input type="text" name="hiddenName" id="hiddenName"/>--%>
+<%--                    </form>--%>
+<%--                    <form action="/ads/add-cards" method="post">--%>
+<%--                        <input type="text" name="hiddenImage" id="hiddenImage"/>--%>
+<%--                    </form>--%>
 
                     <jsp:include page="/WEB-INF/partials/jQuery.jsp"/>
                     <script>
                         <jsp:include page="/WEB-INF/fetchCards.js" />
                     </script>
                 </div>
-
             </div>
+
             <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
                     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
                     crossorigin="anonymous"></script>
