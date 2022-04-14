@@ -11,6 +11,9 @@
             <form action="/deck" method="POST">
             <button type="submit" name="deck_selected" id="deck_selected" value="${ad.deckId}">select deck</button>
             </form>
+            <form action="/delete">
+                <button type="submit" name=delete_deck" id="delete_deck" value="${ad.deckId}">Delete</button>
+            </form>
         </div>
     </c:forEach>
 </div>

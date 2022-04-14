@@ -54,6 +54,20 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+    @Override
+    public void deleteDeck(long deckId) {
+        try{
+            String q = "DROP TABLE IF EXISTS WHERE deck_id = ?";
+            PreparedStatement stmt = connection.prepareStatement(q, Statement.RETURN_GENERATED_KEYS);
+            stmt.setLong(1, deckId);
+            stmt.executeUpdate();
+            ResultSet rs = stmt.getGeneratedKeys();
+            /*rs.next();*/
+        }catch (SQLException e) {
+            throw new RuntimeException("Error Deleteing a Deck");
+        }
+    }
+
     private Deck extractAd(ResultSet rs) throws SQLException {
         return new Deck(
                 rs.getLong("deck_id"),
