@@ -57,14 +57,28 @@ public class MySQLAdsDao implements Ads {
     @Override
     public void deleteDeck(long deckId) {
         try{
-            String q = "DROP TABLE IF EXISTS WHERE deck_id = ?";
+            foreignKey(0);
+            String q = "DELETE FROM deck WHERE deck_id = ?";
             PreparedStatement stmt = connection.prepareStatement(q, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, deckId);
             stmt.executeUpdate();
+            foreignKey(1);
             ResultSet rs = stmt.getGeneratedKeys();
             /*rs.next();*/
         }catch (SQLException e) {
             throw new RuntimeException("Error Deleteing a Deck");
+        }
+    }
+    //disables foreign key -> then re-asigns it so that the delete could work;
+    private void foreignKey(long key) {
+        try{
+            String q = "SET foreign_key_checks = ?";
+            PreparedStatement s = connection.prepareStatement(q,Statement.RETURN_GENERATED_KEYS);
+            s.setLong(1, key);
+            s.executeUpdate();
+            s.getGeneratedKeys();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error Foreign Key");
         }
     }
 
