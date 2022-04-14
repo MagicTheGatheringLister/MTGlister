@@ -28,10 +28,13 @@ public class ChooseCardsServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         User user = (User) request.getSession().getAttribute("user");
 
-        if(request.getSession().getAttribute("deck_name") == null) {
+/*        if(request.getSession().getAttribute("deck_name") == null) {
             String deckName = request.getParameter("deck_name");
-            request.getSession().setAttribute("deck", DaoFactory.getAdsDao().findDeck(deckName));
-        }
+            String name = "name";
+            request.getSession().setAttribute("deck", DaoFactory.getAdsDao().findDeck(name));
+        }*/
+        String name = "name";
+        request.getSession().setAttribute("deck", DaoFactory.getAdsDao().findDeck(name));
 
         Deck deck = (Deck) request.getSession().getAttribute("deck");
 

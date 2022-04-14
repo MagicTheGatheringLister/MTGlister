@@ -4,6 +4,7 @@ public class Card {
     private long cardId;
     private String cardName;
     private String cardImage;
+    private long cardDeckId;
 
     public long getCardDeckId() {
         return cardDeckId;
@@ -12,8 +13,6 @@ public class Card {
     public void setCardDeckId(long cardDeckId) {
         this.cardDeckId = cardDeckId;
     }
-
-    private long cardDeckId;
 
     public Card(long cardId, String cardName, String cardImage, long cardDeckId){
         this.cardId = cardId;

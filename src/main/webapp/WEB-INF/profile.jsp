@@ -14,7 +14,7 @@
 
 </head>
 <body>
-    <jsp:include page="/WEB-INF/partials/profile-navbar.jsp" />
+    <jsp:include page="/WEB-INF/partials/navbar.jsp" />
     <div class="container">
         <div class="row">
             <div class="col-md-12">
