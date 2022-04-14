@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Date;
 
@@ -27,7 +28,9 @@ public class SelectDeckServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 /*        long deckId = Long.parseLong(request.getParameter("deck_selected"));*/
-        request.setAttribute("deckId", request.getParameter("deck_selected"));
+    /*    request.setAttribute("deckId", request.getParameter("deck_selected"));*/
+        HttpSession session = request.getSession();
+        session.setAttribute("deckId", request.getParameter("deck_selected"));
 
         response.sendRedirect("/");
     }
