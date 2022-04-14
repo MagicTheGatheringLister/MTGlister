@@ -13,8 +13,19 @@
                 <a class="nav-link" href="/register">Register</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/login">Login</a>
+                <a class="nav-link" href="/profile">Profile</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+            </li>
+            <%--these will be on the profile page--%>
+<%--            <li class="nav-item">
+                <a class="nav-link popup" href="/ads">>Deck Page</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/ads/create">Create</a>
+            </li>--%>
+
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <input id="input" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

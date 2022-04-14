@@ -1,4 +1,4 @@
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="container">
     <h1>Here are all the decks</h1>
 
@@ -12,3 +12,4 @@
         </div>
     </c:forEach>
 </div>
+
