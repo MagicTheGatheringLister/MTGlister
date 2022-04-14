@@ -30,7 +30,7 @@ public class ChooseCardsServlet extends HttpServlet {
         String name = (String) request.getAttribute("name");
         System.out.println(name);
         Deck deck = DaoFactory.getAdsDao().findDeck(name);
-        System.out.println(deck);
+
 
         String addedCard = request.getParameter("hiddenName");
         String addedImage = request.getParameter("hiddenImage");

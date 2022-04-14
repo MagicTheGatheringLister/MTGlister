@@ -22,7 +22,7 @@
                 <a class="nav-link" href="/logout">Logout</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link popup" href="/ads">>Deck Page</a>
+                <a class="nav-link popup" href="/ads">Deck Page</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/ads/create">Create</a>
