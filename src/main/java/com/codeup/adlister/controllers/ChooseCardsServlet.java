@@ -34,9 +34,9 @@ public class ChooseCardsServlet extends HttpServlet {
             request.getSession().setAttribute("deck", DaoFactory.getAdsDao().findDeck(name));
         }*/
         String name = "name";
-        request.getSession().setAttribute("deck", DaoFactory.getAdsDao().findDeck(name));
-
-        Deck deck = (Deck) request.getSession().getAttribute("deck");
+        System.out.println(name);
+        Deck deck = DaoFactory.getAdsDao().findDeck(name);
+        System.out.println(deck);
 
         String addedCard = request.getParameter("hiddenName");
         String addedImage = request.getParameter("hiddenImage");
