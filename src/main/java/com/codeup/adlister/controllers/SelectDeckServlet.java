@@ -14,30 +14,21 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Date;
 
-@WebServlet(name = "controllers.ChooseCardsServlet", urlPatterns = "/ads/add-cards")
-public class ChooseCardsServlet extends HttpServlet {
+@WebServlet(name = "controllers.SelectDeckServlet", urlPatterns = "/deck")
+public class SelectDeckServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (request.getSession().getAttribute("user") == null) {
             response.sendRedirect("/login");
             return;
         }
-        request.getRequestDispatcher("/")
+        request.getRequestDispatcher("WEB-INF/profile")
                 .forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        long deckId = Long.parseLong((String) request.getAttribute("deckId"));
-        System.out.println("from deck id");
-        System.out.println(deckId);
+/*        long deckId = Long.parseLong(request.getParameter("deck_selected"));*/
+        request.setAttribute("deckId", request.getParameter("deck_selected"));
 
-        String addedCard = request.getParameter("hiddenName");
-        String addedImage = request.getParameter("hiddenImage");
-        Card card = new Card(
-                addedCard,
-                addedImage,
-                deckId
-        );
-        DaoFactory.getCardsDao().insert(card);
         response.sendRedirect("/");
     }
 }

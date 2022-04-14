@@ -8,7 +8,9 @@
             <p>${ad.dateCreated}</p>
             <p>${ad.deckName}</p>
             <p>${ad.userId}</p>
-            <p>${ad.deckId}</p>
+            <form action="/deck" method="POST">
+            <button type="submit" name="deck_selected" id="deck_selected" value="${ad.deckId}">select deck</button>
+            </form>
         </div>
     </c:forEach>
 </div>
