@@ -53,6 +53,34 @@ public class MySQLCardsDao implements Cards {
         }
     }
 
+    @Override
+    public Card searchCards(String cardName) {
+        try{
+            String q = "SELECT * FROM cards WHERE card_name LIKE ?";
+            PreparedStatement stmt = connection.prepareStatement(q, Statement.RETURN_GENERATED_KEYS);
+            stmt.setString(1, cardName);
+            stmt.executeUpdate();
+            ResultSet rs = stmt.getGeneratedKeys();
+            return extractAd(rs);
+        }catch (SQLException e) {
+            throw new RuntimeException("error Searching cards", e);
+        }
+    }
+
+    @Override
+    public Card searchCardsByCat(String cardCatagory) {
+        try{
+            String q = "SELECT * FROM cards WHERE catagory = ? ";
+            PreparedStatement stmt = connection.prepareStatement(q, Statement.RETURN_GENERATED_KEYS);
+            stmt.setString(1, cardCatagory);
+            stmt.executeUpdate();
+            ResultSet rs = stmt.getGeneratedKeys();
+            return extractAd(rs);
+        }catch (SQLException e) {
+            throw new RuntimeException("error Searching cards by cat", e);
+        }
+    }
+
     private Card extractAd(ResultSet rs) throws SQLException {
         return new Card(
                 rs.getLong("card_id"),

@@ -6,6 +6,7 @@ import com.codeup.adlister.models.Deck;
 import java.util.List;
 
 public interface Ads {
+    void deleteDeck(long deckName);
     Deck findDeck(String deckName);
     // get a list of all the ads
     List<Deck> all();
