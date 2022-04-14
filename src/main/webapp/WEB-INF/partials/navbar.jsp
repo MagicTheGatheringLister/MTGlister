@@ -12,21 +12,26 @@
             <li class="nav-item">
                 <a class="nav-link" href="/register">Register</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/profile">Profile</a>
-            </li>
+            <%
+                if (request.getSession().getAttribute("user") == null) { %>
             <li class="nav-item">
                 <a class="nav-link" href="/login">Login</a>
             </li>
+            <% } else { %>
             <li class="nav-item">
+<<<<<<< HEAD
                 <a class="nav-link" href="/logout">Logout</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link popup" href="/ads">Deck Page</a>
+=======
+                <a class="nav-link" href="/profile">Profile</a>
+>>>>>>> 512bf3b95d311c0a218111b28b2a6b9e1c479a91
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/ads/create">Create</a>
+                <a class="nav-link" href="/logout">Logout</a>
             </li>
+            <% } %>
 
         </ul>
         <form class="form-inline my-2 my-lg-0">
