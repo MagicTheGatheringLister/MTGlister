@@ -16,5 +16,18 @@
             </form>
         </div>
     </c:forEach>
+
+    <c:forEach var="card" items="${cards}">
+        <div class="hidden">
+            ${card.cardName}
+        </div>
+        <div>
+            <img class="hidden" src="${card.cardImage}">
+        </div>
+    </c:forEach>
+
 </div>
+<script>
+    <jsp:include page="/WEB-INF/fetchCards.js" />
+</script>
 

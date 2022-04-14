@@ -1,6 +1,7 @@
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Card;
+import com.codeup.adlister.models.Deck;
 import com.codeup.adlister.models.User;
 import com.mysql.cj.jdbc.Driver;
 
@@ -97,7 +98,5 @@ public class MySQLCardsDao implements Cards {
         }
         return Card;
     }
-
-
 
 }
