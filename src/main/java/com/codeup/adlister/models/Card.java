@@ -6,6 +6,9 @@ public class Card {
     private String cardImage;
     private long cardDeckId;
 
+    {
+    }
+
     public long getCardDeckId() {
         return cardDeckId;
     }

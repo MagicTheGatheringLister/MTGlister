@@ -28,7 +28,6 @@ public class ChooseCardsServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         HttpSession session = request.getSession();
         long deckId = Long.parseLong((String) session.getAttribute("deckId"));
-/*        String deckId = (String) request.getAttribute("deckId");*/
         System.out.println("from deck id");
         System.out.println(deckId);
 

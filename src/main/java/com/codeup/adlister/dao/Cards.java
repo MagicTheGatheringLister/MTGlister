@@ -10,4 +10,7 @@ public interface Cards {
     Card searchCardsByCat(String cardCat);
     List<Card> all();
     Long insert(Card card);
+
+    List<Card> DisplayCard(long deckId);
+//    Card DisplayCard(long deckId);
 }

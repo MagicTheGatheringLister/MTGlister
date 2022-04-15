@@ -22,10 +22,10 @@
     <div id="searchedCard">
 
     </div>
+
     <form action="/ads/add-cards" id="myForm" method="post">
         <input type="text" name="hiddenName" id="hiddenName"/>
         <input type="text" name="hiddenImage" id="hiddenImage"/>
-
         <%--use this to simplify our navbar jsp when we are logged in--%>
         <%
             if (request.getSession().getAttribute("user") == null) { %>

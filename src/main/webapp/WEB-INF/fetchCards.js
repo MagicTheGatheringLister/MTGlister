@@ -71,15 +71,28 @@ $("#search").on("click", e => {
     }
 })
 
-window.onload=function(){
-    var auto = setTimeout(function(){ autoRefresh(); }, 100);
+// window.onload=function(){
+//     let auto = setTimeout(function(){ autoRefresh(); }, 100);
+//
+//     function submitForm(){
+//         document.getElementById("#myForm").submit();
+//     }
+//
+//     function autoRefresh(){
+//         clearTimeout(auto);
+//         auto = setTimeout(function(){ submitForm(); autoRefresh(); }, 2000);
+//     }
+// }
 
-    function submitForm(){
-        document.getElementById("#submit").submit();
-    }
+// $(window).load(function () {
+//     var submit = false;
+//     $("#myForm").submit(function(e) {
+//         if(!submit){
+//             e.preventDefault();
+//         setTimeout(function(){
+//             alert("me after 1000 mili seconds");
+//             submit = true;
+//             $("#myForm").submit(); // if you want
+//         }, 1000);
+// }})});
 
-    function autoRefresh(){
-        clearTimeout(auto);
-        auto = setTimeout(function(){ submitForm(); autoRefresh(); }, 2000);
-    }
-}

@@ -17,8 +17,11 @@ public class AdsIndexServlet extends HttpServlet {
             return;
         }
         request.setAttribute("ads", DaoFactory.getAdsDao().all());
-        request.setAttribute("cards", DaoFactory.getCardsDao().all());
-
+//        request.setAttribute("cards", DaoFactory.getCardsDao().all());
         request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
+    }
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        response.sendRedirect("/ads");
     }
 }

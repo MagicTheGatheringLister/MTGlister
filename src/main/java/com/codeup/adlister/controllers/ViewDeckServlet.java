@@ -7,25 +7,23 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.lang.Long;
 
-@WebServlet(name = "controllers.DeleteDeckServlet", urlPatterns = "/delete")
-public class DeleteDeckServlet extends HttpServlet {
+@WebServlet(name = "controllers.ViewDeckServlet", urlPatterns = "/view-deck")
+public class ViewDeckServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (request.getSession().getAttribute("user") == null) {
             response.sendRedirect("/login");
             return;
         }
-        request.getRequestDispatcher("/WEB-INF/profile.jsp")
-                .forward(request, response);
+//        long deckId = Long.parseLong(request.getParameter("view_deck"));
+//        request.setAttribute("cards", DaoFactory.getCardsDao().DisplayCard(deckId));
+        request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
     }
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        long deckId = Long.parseLong(request.getParameter("delete_deck"));
-        System.out.println(deckId);
-        DaoFactory.getAdsDao().deleteDeck(deckId);
-
-        response.sendRedirect("/profile");
+        HttpSession session = request.getSession();
+        session.setAttribute("deckId", request.getParameter("view_deck"));
+        response.sendRedirect("/ads");
     }
 }
