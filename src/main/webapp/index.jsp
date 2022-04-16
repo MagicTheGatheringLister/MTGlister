@@ -6,6 +6,9 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Welcome to my site!" />
     </jsp:include>
+    <style>
+<jsp:include page="/WEB-INF/CSS/homepage.css"/>
+    </style>
 </head>
 <body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
@@ -17,22 +20,25 @@
     </div>
     <div class="container-fluid">
         <div id="magic" class="row row-cols-6">
+
+        </div>
+    </div>
         </div>
     </div>
     <div id="searchedCard">
 
     </div>
 
-    <form action="/ads/add-cards" id="myForm" method="post">
-        <input type="text" name="hiddenName" id="hiddenName"/>
-        <input type="text" name="hiddenImage" id="hiddenImage"/>
+    <form action="/ads/add-cards" name="myForm" id="myForm" method="post">
+        <input type="text" class="hidden" name="hiddenName" id="hiddenName"/>
+        <input type="text" class="hidden" name="hiddenImage" id="hiddenImage"/>
         <%--use this to simplify our navbar jsp when we are logged in--%>
-        <%
-            if (request.getSession().getAttribute("user") == null) { %>
-        <button type="submit" disabled="disabled">Submit</button>
-       <% } else { %>
-        <button type="submit" id="submit">Submit</button>
-       <% } %>
+<%--        <%--%>
+<%--            if (request.getSession().getAttribute("user") == null) { %>--%>
+<%--        <button type="submit" disabled="disabled">Submit</button>--%>
+<%--       <% } else { %>--%>
+<%--        <button type="submit" id="submit">Submit</button>--%>
+<%--       <% } %>--%>
 <%--        <button type="submit">submit</button>--%>
     </form>
 
@@ -40,5 +46,6 @@
     <script>
 <jsp:include page="/WEB-INF/fetchCards.js" />
     </script>
+
 </body>
 </html>

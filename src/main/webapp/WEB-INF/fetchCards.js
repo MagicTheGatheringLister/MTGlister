@@ -15,20 +15,26 @@ const fetchMagicCards = () => {
 
                 }else{
                     $("#magic").append(`
-<div class="card-group ">
-  <div class="card " style="width: 8rem;">
+            <div class="card-group ">
+                <div class="card " style="width: 8rem;">
     <img src="${promises[0].cards[i].imageUrl}" style="width: 235px; height: 300px;" class="card-img-top" alt="...">
-    <div class="card-body d-flex justify-content-center">
-    <button type="button" id="btn${i}" class="btn btn-outline-primary">Add to Deck</button>
-    </div>
-    </div>
-    </div>
+            <div class="card-body d-flex justify-content-center">
+                <button type="button" id="btn${i}" class=" btn btn-outline-primary">Add</button>
+                <button type="button" class="form btn btn-outline-primary">Submit to deck</button>
+            </div>
        `)
                     $("#btn" + i).on("click", e =>{
                         e.preventDefault();
                         document.getElementById("hiddenName").value=promises[0].cards[i].name;
                         document.getElementById("hiddenImage").value=promises[0].cards[i].imageUrl;
                     })
+
+                    $(".form").on("click", e =>{
+                        $("#myForm").submit();
+                        e.preventDefault();
+
+                    })
+
                 }
             }})};
 

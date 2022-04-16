@@ -1,7 +1,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<style>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<jsp:include page="/WEB-INF/partials/head.jsp"/>
+    <style>
     <jsp:include page="/WEB-INF/ads/index.css"/>
 </style>
+</head>
 <div class="container">
     <h1>Here are all the decks</h1>
 
@@ -23,14 +27,15 @@
             </form>
         </div>
     </c:forEach>
+
+
     <c:forEach var="card" items="${cards}">
-        <div >
-                ${card.cardName}
-        </div>
-        <div>
-            <img src="${card.cardImage}">
-        </div>
+        <div class="d-flex">
+                   <div>${card.cardName}</div>
+                <img src="${card.cardImage}" style="width: 235px; height: 300px;" class="card-img-top" alt="...">
+            </div>
     </c:forEach>
+
 
 
 
