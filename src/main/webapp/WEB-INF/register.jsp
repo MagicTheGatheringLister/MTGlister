@@ -5,7 +5,7 @@
         <jsp:param name="title" value="Register For Our Site!"/>
     </jsp:include>
     <style>
-        <jsp:include page="registration.css"/>
+        <jsp:include page="CSS/registration.css"/>
     </style>
 
 </head>

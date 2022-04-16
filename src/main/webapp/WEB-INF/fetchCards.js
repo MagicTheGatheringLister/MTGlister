@@ -1,4 +1,3 @@
-
 let promises = [];
 const fetchMagicCards = () => {
 
@@ -15,20 +14,26 @@ const fetchMagicCards = () => {
 
                 }else{
                     $("#magic").append(`
-<div class="card-group ">
-  <div class="card " style="width: 8rem;">
+            <div class="card-group ">
+                <div class="card " style="width: 8rem;">
     <img src="${promises[0].cards[i].imageUrl}" style="width: 235px; height: 300px;" class="card-img-top" alt="...">
-    <div class="card-body d-flex justify-content-center">
-    <button type="button" id="btn${i}" class="btn btn-outline-primary">Add to Deck</button>
-    </div>
-    </div>
-    </div>
+            <div class="card-body d-flex justify-content-center">
+                <button type="button" id="btn${i}" class=" btn btn-outline-primary">Add</button>
+                <button type="button" class="form btn btn-outline-primary">Submit to deck</button>
+            </div>
        `)
                     $("#btn" + i).on("click", e =>{
                         e.preventDefault();
                         document.getElementById("hiddenName").value=promises[0].cards[i].name;
                         document.getElementById("hiddenImage").value=promises[0].cards[i].imageUrl;
                     })
+
+                    $(".form").on("click", e =>{
+                        $("#myForm").submit();
+                        e.preventDefault();
+
+                    })
+
                 }
             }})};
 
@@ -70,29 +75,4 @@ $("#search").on("click", e => {
         }
     }
 })
-
-// window.onload=function(){
-//     let auto = setTimeout(function(){ autoRefresh(); }, 100);
-//
-//     function submitForm(){
-//         document.getElementById("#myForm").submit();
-//     }
-//
-//     function autoRefresh(){
-//         clearTimeout(auto);
-//         auto = setTimeout(function(){ submitForm(); autoRefresh(); }, 2000);
-//     }
-// }
-
-// $(window).load(function () {
-//     var submit = false;
-//     $("#myForm").submit(function(e) {
-//         if(!submit){
-//             e.preventDefault();
-//         setTimeout(function(){
-//             alert("me after 1000 mili seconds");
-//             submit = true;
-//             $("#myForm").submit(); // if you want
-//         }, 1000);
-// }})});
 

@@ -1,8 +1,8 @@
 <style>
-    <jsp:include page="/WEB-INF/ads/index.css"/>
+    <jsp:include page="/WEB-INF/CSS/index.css"/>
 </style>
     <div class="container">
-        <h1>Create a new Ad</h1>
+        <h1>Create a new deck</h1>
         <form action="/ads/create" method="post">
             <div class="form-group">
                 <label for="deck_name">Title</label>
