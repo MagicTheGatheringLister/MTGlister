@@ -31,7 +31,7 @@
                             <!-- END profile-header-img -->
                             <!-- BEGIN profile-header-info -->
                             <div class="profile-header-info">
-                                <h4 class="m-t-10 m-b-5">Elden Lord</h4>
+                                <h4 class="m-t-10 m-b-5">Welcome, ${sessionScope.user.username}!</h4>
                             </div>
                             <!-- END profile-header-info -->
 
