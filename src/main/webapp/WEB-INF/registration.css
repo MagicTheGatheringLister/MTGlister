@@ -4,21 +4,23 @@
 @import url(https://meyerweb.com/eric/tools/css/reset/reset.css);
 
 body {
-    background: #1b1e24;
-    background-image:-webkit-linear-gradient(right,#1b1e24,#1b1e24 50%,#1b1e24);
-    background-image:-moz-linear-gradient(right,#1b1e24,#1b1e24 50%,#1b1e24);
-    background-image:-o-linear-gradient(right,#1b1e24,#1b1e24 50%,#1b1e24);
-    background-image:-ms-linear-gradient(right,#1b1e24,#1b1e24 50%,#1b1e24);
-    background-image:linear-gradient(to left,#1b1e24,#1b1e24 50%,#1b1e24);
+    /*background: #1b1e24;*/
+    /*background-image:-webkit-linear-gradient(right,#1b1e24,#1b1e24 50%,#1b1e24);*/
+    /*background-image:-moz-linear-gradient(right,#1b1e24,#1b1e24 50%,#1b1e24);*/
+    /*background-image:-o-linear-gradient(right,#1b1e24,#1b1e24 50%,#1b1e24);*/
+    /*background-image:-ms-linear-gradient(right,#1b1e24,#1b1e24 50%,#1b1e24);*/
+    /*background-image:linear-gradient(to left,#1b1e24,#1b1e24 50%,#1b1e24);*/
     text-align: center;
     font-family: Arial, sans-serif;
     font-size: 14px;
     line-height: 1.5em;
+    background: url("../assets/Magic-the-gathering-wallpapers-hd.jpeg");
+    background-size: cover;
 }
 
-[class*="fontawesome-"]:before {
-    font-family: 'FontAwesome', sans-serif;
-}
+/*[class*="fontawesome-"]:before {*/
+/*    font-family: 'FontAwesome', sans-serif;*/
+/*}*/
 
 input {
     font-size: 1em;
@@ -30,60 +32,72 @@ input {
 
 .Register {
     margin: 50px auto;
-    width: 242px;
+    width: auto;
 }
 
-.Register span {
-    color: hsl(14, 100%, 44%);
-    display: block;
-    height: 48px;
-    line-height: 48px;
-    position: absolute;
-    text-align: center;
-    width: 36px;
-}
+/*.Register span {*/
+/*    color: hsl(14, 100%, 44%);*/
+/*    display: block;*/
+/*    height: 48px;*/
+/*    line-height: 48px;*/
+/*    position: absolute;*/
+/*    text-align: center;*/
+/*    width: 36px;*/
+/*}*/
 
 .Register input {
     border: none;
     height: 48px;
     outline: none;
-}
 
-.Register input[type="text"] {
     background-color: #fff;
-    border-top: 2px solid #e23600;
+    border-top: 2px solid #1059e0;
     border-right: 1px solid #000;
     border-left: 1px solid #000;
-    border-radius: 5px 5px 0 0;
     -moz-border-radius: 5px 5px 0 0;
     -webkit-border-radius: 5px 5px 0 0;
-    -o-border-radius: 5px 5px 0 0;
-    -ms-border-radius: 5px 5px 0 0;
+
+    border-radius: 10px;
     color: #363636;
     padding-left: 36px;
-    width: 204px;
+    margin: 20px 0;
 }
 
-.Register input[type="password"] {
-    background-color: #fff;
-    border-top: 2px solid #e23600;
-    border-right: 1px solid #000;
-    border-bottom: 2px solid #e23600;
-    border-left: 1px solid #000;
-    border-radius: 0 0 5px 5px;
-    -moz-border-radius: 0 0 5px 5px;
-    -webkit-border-radius: 0 0 5px 5px;
-    -o-border-radius: 0 0 5px 5px;
-    -ms-border-radius: 0 0 5px 5px;
-    color: #363636;
-    margin-bottom: 20px;
-    padding-left: 36px;
-    width: 204px;
-}
+/*.Register input[type="text"] {*/
+/*    background-color: #fff;*/
+/*    border-top: 2px solid #e23600;*/
+/*    border-right: 1px solid #000;*/
+/*    border-left: 1px solid #000;*/
+/*    border-radius: 5px 5px 0 0;*/
+/*    -moz-border-radius: 5px 5px 0 0;*/
+/*    -webkit-border-radius: 5px 5px 0 0;*/
+/*    -o-border-radius: 5px 5px 0 0;*/
+/*    -ms-border-radius: 5px 5px 0 0;*/
+/*    color: #363636;*/
+/*    padding-left: 36px;*/
+/*    width: 204px;*/
+/*}*/
 
-.Register input[type="submit"] {
-    background-color: #e23600;
-    border: 1px solid #e23600;
+/*.Register input[type="password"] {*/
+/*    background-color: #fff;*/
+/*    border-top: 2px solid #e23600;*/
+/*    border-right: 1px solid #000;*/
+/*    border-bottom: 2px solid #e23600;*/
+/*    border-left: 1px solid #000;*/
+/*    border-radius: 0 0 5px 5px;*/
+/*    -moz-border-radius: 0 0 5px 5px;*/
+/*    -webkit-border-radius: 0 0 5px 5px;*/
+/*    -o-border-radius: 0 0 5px 5px;*/
+/*    -ms-border-radius: 0 0 5px 5px;*/
+/*    color: #363636;*/
+/*    margin-bottom: 20px;*/
+/*    padding-left: 36px;*/
+/*    width: 204px;*/
+/*}*/
+
+.Register button[type="submit"] {
+    background-color: #0c04ce;
+    border: 1px solid #070e93;
     border-radius: 15px;
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
@@ -97,21 +111,36 @@ input {
     width: 240px;
 }
 
-.Register input[type="submit"]:hover {
-    background-color: #e23600;
-    box-shadow: 2px 2px 20px #e23600, #fff 0 -1px 2px;
+.Register button[type="submit"]:hover {
+    background-color: #1807ad;
+    box-shadow: 2px 2px 20px #1b3fef, #fff 0 -1px 2px;
+}
+
+#form-login{
+    background-color: rgba(6, 33, 33, 0.8);
+    border-radius: 25px;
+    border-style: solid;
+    border-color: #0505ea;
+    border-width: 1px;
+    box-shadow: rgba(137, 171, 245, 0.4) 0px 54px 55px,
+    rgba(69, 175, 241, 0.4) 0px -12px 30px,
+    rgba(71, 154, 236, 0.4) 0px 4px 6px,
+    rgba(59, 62, 239, 0.4) 0px 12px 13px,
+    rgba(57, 115, 239, 0.4) 0px -3px 5px;
+    padding: 30px;
 }
 
 .text {
-    color: #e23600;
+    color: #030ffa;
     font-size: 40px;
     margin: 2% auto;
     text-align: center;
     font-family: 'Titan One';
     text-shadow: 1px 2px 1px  rgba(0,0,0,.5);
-    padding-top: 40px;
+    padding-top: 20px;
+
 }
 
 p:hover {
-    text-shadow: 2px 2px 20px #fdb400, #fff 0 -1px 2px;
+    text-shadow: 2px 2px 20px #797aec, #fff 0 -1px 2px;
 }
