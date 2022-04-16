@@ -26,6 +26,6 @@ public class DeleteDeckServlet extends HttpServlet {
         System.out.println(deckId);
         DaoFactory.getAdsDao().deleteDeck(deckId);
 
-        response.sendRedirect("/ads");
+        response.sendRedirect("/profile");
     }
 }

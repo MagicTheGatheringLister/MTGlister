@@ -27,8 +27,6 @@ public class SelectDeckServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-/*        long deckId = Long.parseLong(request.getParameter("deck_selected"));*/
-    /*    request.setAttribute("deckId", request.getParameter("deck_selected"));*/
         HttpSession session = request.getSession();
         session.setAttribute("deckId", request.getParameter("deck_selected"));
 

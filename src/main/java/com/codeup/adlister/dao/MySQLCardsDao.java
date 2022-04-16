@@ -1,8 +1,6 @@
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Card;
-import com.codeup.adlister.models.Deck;
-import com.codeup.adlister.models.User;
 import com.mysql.cj.jdbc.Driver;
 
 import java.sql.*;
@@ -54,6 +52,7 @@ public class MySQLCardsDao implements Cards {
         }
     }
 
+
     @Override
     public Card searchCards(String cardName) {
         try{
@@ -98,5 +97,32 @@ public class MySQLCardsDao implements Cards {
         }
         return Card;
     }
+
+    public List<Card> DisplayCard(long deckId){
+        List<Card> card = new ArrayList<>();
+        try{
+            String p="SELECT * FROM cards WHERE card_deck_id = ?";
+            PreparedStatement stmt = connection.prepareStatement(p, Statement.RETURN_GENERATED_KEYS);
+            stmt.setLong(1, deckId);
+            ResultSet rs = stmt.executeQuery();
+            return createAdsFromResults(rs);
+        }catch(SQLException e){
+            throw new RuntimeException("error finding cards", e);
+        }
+    }
+
+
+//    public Card DisplayCard(long deckId){
+//        try{
+//            String p="SELECT * FROM cards WHERE card_deck_id = ?";
+//            PreparedStatement stmt = connection.prepareStatement(p, Statement.RETURN_GENERATED_KEYS);
+//            stmt.setLong(1, deckId);
+//            stmt.executeQuery();
+//            ResultSet rs = stmt.getGeneratedKeys();
+//            return extractAd(rs);
+//        }catch(SQLException e){
+//            throw new RuntimeException("error finding cards", e);
+//        }
+//    }
 
 }
