@@ -19,7 +19,7 @@
         <form action="/login" method="POST" id="form-login">
             <p class="text text-center pt-4 mb-5">Please Log In!</p>
             <div class="form-group container">
-                <input type="text" name="username" placeholder="Username" class="form-control form mt-3">
+                <input type="text" name="username" placeholder="username" class="form-control form mt-3">
                 <input type="password" name="password" placeholder="password" class="form-control mt-3">
                 <button type="submit" value="Log In" class="btn mt-4">Log In</button>
             </div>
