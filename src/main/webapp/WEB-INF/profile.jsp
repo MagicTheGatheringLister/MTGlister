@@ -28,14 +28,10 @@
                             <!-- BEGIN profile-header-content -->
                             <div class="profile-header-content">
                                 <!-- BEGIN profile-header-img -->
-                                <div class="profile-header-img">
-                                    <!--                                <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">-->
-                                </div>
                                 <!-- END profile-header-img -->
                                 <!-- BEGIN profile-header-info -->
                                 <div class="profile-header-info">
                                     <h4 class="m-t-10 m-b-5">Elden Lord</h4>
-                                    <a href="#" class="btn btn-sm btn-info mb-2">Edit Profile</a>
                                 </div>
                                 <!-- END profile-header-info -->
 

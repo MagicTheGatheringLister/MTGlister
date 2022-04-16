@@ -11,10 +11,11 @@
 
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
-            <p>${ad.deckName}</p>
-            <p>${ad.description}</p>
-            <p>${ad.dateCreated}</p>
+            <p>Deck Name: ${ad.deckName}</p>
+            <p>Deck Description: ${ad.description}</p>
+            <p>Date Created: ${ad.dateCreated}</p>
 <%--            <p>${ad.userId}</p>--%>
+            <div class="d-flex">
             <form action="/view-deck" method="POST">
                 <button type="submit" name="view_deck" id="view_deck" value="${ad.deckId}">View Deck</button>
             </form>
@@ -26,16 +27,18 @@
                 <button type="submit" name="delete_deck" id="delete_deck" value="${ad.deckId}">Delete</button>
             </form>
         </div>
+        </div>
     </c:forEach>
 
-
+    <div class="row row-cols-6">
     <c:forEach var="card" items="${cards}">
-        <div class="d-flex">
-                   <div>${card.cardName}</div>
+
+            <div><p>${card.cardName}</p>
                 <img src="${card.cardImage}" style="width: 235px; height: 300px;" class="card-img-top" alt="...">
             </div>
-    </c:forEach>
 
+    </c:forEach>
+    </div>
 
 
 
