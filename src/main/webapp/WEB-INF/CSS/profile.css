@@ -26,12 +26,15 @@ color: white;
     border: solid red 1px!important;
     background-color: red!important;
 }
+.user-name-display{
+    color: white;
+}
 
 .home-link,
 .home-link:hover {
     background-color: red!important;
     color: white;
-    mar
+    margin: 0 10px;
 }
 
 /*#profile {*/

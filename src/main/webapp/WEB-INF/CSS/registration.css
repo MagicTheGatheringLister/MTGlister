@@ -14,8 +14,10 @@ body {
     font-family: Arial, sans-serif;
     font-size: 14px;
     line-height: 1.5em;
-    background: url("../../assets/Magic-the-gathering-wallpapers-hd.jpeg");
-    background-size: cover;
+    background: url("../../assets/AVS2efHWWj.jpeg");
+   width: 100vw!important;
+    height: 100vh!important;
+    overflow-clip: hidden;
 }
 
 /*[class*="fontawesome-"]:before {*/

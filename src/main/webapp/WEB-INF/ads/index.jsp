@@ -15,7 +15,7 @@
         <div class="col-md-4">
             <div class="card mb-4">
                 <div class="card-body">
-                    <h5 class="card-title">${ad.deckName}</h5>
+                    <h3 class="card-title">${ad.deckName}</h3>
                     <p class="text" style="">Deck Description: ${ad.description}</p>
                     <h6 class="ard-subtitle mb-2 text-muted">Date Created: ${ad.dateCreated}</h6>
 
